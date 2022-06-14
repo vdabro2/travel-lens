@@ -1,8 +1,7 @@
 # travel-lens
-Original App Design Project2 - README Template
 ===
 
-# Traveling as a Social Media
+# TravelLens
 
 ## Table of Contents
 1. [Overview](#Overview)
