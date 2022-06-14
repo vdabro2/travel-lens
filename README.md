@@ -34,12 +34,13 @@ This idea is geared towards unexpirienced travelers who want to find new places 
 * Timeline page for your current location (there will be a spot where you can change this to a specific location as well)
 * Details page for each post at your location
 * Post page where you can post a place you went to and review it. 
-* Personal info page with your saved posts, your posts, and settings. 
+
 
 **Optional Nice-to-have Stories**
 
-* Explore page where the user gets many different, random locations if they dont know where to travel to next. 
+* Personal info page with your saved posts, your posts, and settings. I included a wireframe of this as well. 
 * Replying to other users feature/ chat feature. 
+* Explore page where the user gets many different, random locations if they dont know where to travel to next. 
 * Find a travel buddy explore page. Uses your location to match you to another traveler looking to explore in the place you are in.
 
 ### 2. Screen Archetypes
@@ -49,7 +50,7 @@ This idea is geared towards unexpirienced travelers who want to find new places 
 * Timeline Location
 * Explore Location
 * Post Screen 
-* Profile Screen
+
 
 ### 3. Navigation
 
@@ -58,7 +59,6 @@ This idea is geared towards unexpirienced travelers who want to find new places 
 * Logout
 * Compose a post
 * Timeline
-* My Profile
 
 **Flow Navigation** (Screen to Screen)
 
