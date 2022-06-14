@@ -65,5 +65,4 @@ This idea is geared towards unexpirienced travelers who want to find new places 
 * Timeline post -> Detailed view
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="./Screen Shot 2022-06-14 at 11.46.20 AM.png" width=600>
+<img src="./Screen Shot 2022-06-14 at 11.46.20 AM.png" width=1000>
