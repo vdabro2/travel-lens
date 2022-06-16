@@ -39,6 +39,8 @@ This idea is geared towards unexpirienced travelers who want to find new places 
 **Optional Nice-to-have Stories**
 
 * Personal info page with your saved posts, your posts, and settings. I included a wireframe of this as well. 
+* Personal info of other users page! AKA profile page for other people.
+More:
 * Replying to other users feature/ chat feature. 
 * Explore page where the user gets many different, random locations if they dont know where to travel to next. 
 * Find a travel buddy explore page. Uses your location to match you to another traveler looking to explore in the place you are in.
@@ -68,3 +70,56 @@ This idea is geared towards unexpirienced travelers who want to find new places 
 
 ## Wireframes
 <img src="./Screen Shot 2022-06-14 at 11.46.20 AM.png" width=1000>
+
+## Schema 
+### Models
+#### Post
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the user post (default field) |
+   | author        | Pointer to User| image author |
+   | image         | File     | image that user posts |
+   | review        | String   | image caption/review by author |
+   | createdAt     | DateTime | date when post is created (default field) |
+   | updatedAt     | DateTime | date when post is last updated (default field) |
+   | rating        | Number   | The rating that the author gives the post |
+   | savedUsers        | Array   | An array of users who saved the post. |
+   | location        | GeoPoint (?)   | The location the post is meant for |
+   
+#### User
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the user post (default field) |
+   | profilePicture         | File     | image that users profile picture |
+   | username       | String   | authors username |
+   | name       | String   | authors name |
+   | password       | String   | authors password |
+   | createdAt     | DateTime | date when post is created (default field) |
+   | updatedAt     | DateTime | date when post is last updated (default field) |
+### Networking
+#### List of network requests by screen
+   - Home Feed Screen at Current Location
+      - (Read/GET) Query all posts where post is at that GeoPoint
+         ```swift
+         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+        // include data referred by user key
+        query.include(Post.KEY_USER);
+        query.whereEqualTo(Post.KEY_USER, ParseUser.getCurrentUser());
+        // limit query to latest 20 items
+        query.setLimit(20);
+        // order posts by creation date (newest first)
+        query.addDescendingOrder("createdAt");
+         ```
+      - (Create/POST) Create a new like on a post
+      - (Delete) Delete existing like
+      - (Create/POST) Create a new comment on a post
+      - (Delete) Delete existing comment
+   - Explore page for typed in location
+   - Detailed post page for clicked on post
+   - Create Post Screen
+      - (Create/POST) Create a new post object
+   - Profile Screen
+      - (Read/GET) Query logged in user object
+      - (Update/PUT) Update user profile image
