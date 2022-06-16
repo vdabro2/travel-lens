@@ -106,20 +106,25 @@ More:
          ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         // include data referred by user key
         query.include(Post.KEY_USER);
-        query.whereEqualTo(Post.KEY_USER, ParseUser.getCurrentUser());
+        query.whereEqualTo(Post.KEY_LOCATION, ParseUser.getCurrentUser().getLocation());
         // limit query to latest 20 items
         query.setLimit(20);
         // order posts by creation date (newest first)
         query.addDescendingOrder("createdAt");
          ```
-      - (Create/POST) Create a new like on a post
-      - (Delete) Delete existing like
-      - (Create/POST) Create a new comment on a post
-      - (Delete) Delete existing comment
    - Explore page for typed in location
-   - Detailed post page for clicked on post
+      - (Read/GET) Query all posts where post is at that new GeoPoint
+         ```swift
+         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+        // include data referred by user key
+        query.include(Post.KEY_USER);
+        query.whereEqualTo(Post.KEY_LOCATION, edittext.getText()); // sometype of way to enter a location into API
+        // limit query to latest 20 items
+        query.setLimit(20);
+        // order posts by creation date (newest first)
+        query.addDescendingOrder("createdAt");
+         ```
+   - Detailed post page for clicked on post (won't need new api call, just pass Post object in intent)
    - Create Post Screen
       - (Create/POST) Create a new post object
-   - Profile Screen
-      - (Read/GET) Query logged in user object
-      - (Update/PUT) Update user profile image
+   
