@@ -88,7 +88,6 @@ This idea is geared towards unexpirienced travelers who want to find new places 
    | createdAt     | DateTime | date when post is created (default field) |
    | updatedAt     | DateTime | date when post is last updated (default field) |
    | rating        | Number   | The rating that the author gives the post |
-   | savedUsers        | Array   | An array of users who saved the post. |
    | location        | GeoPoint (?)   | The location the post is meant for |
    
 #### User
