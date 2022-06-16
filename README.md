@@ -31,16 +31,20 @@ This idea is geared towards unexpirienced travelers who want to find new places 
 **Required Must-have Stories**
 
 * Login page
-* Timeline page for your current location (there will be a spot where you can change this to a specific location as well)
-* Details page for each post at your location
+* Sign up page if no account
+* Timeline page for your current location with search bar
+* Timeline page for a different location with search bar
+* Details page for each post so you can see the rating and description
 * Post page where you can post a place you went to and review it. 
 
 
 **Optional Nice-to-have Stories**
 
-* Personal info page with your saved posts, your posts, and settings. I included a wireframe of this as well. 
+* Personal info page with your saved posts
+* Personal info page with your posts
+* Settings page
 * Personal info of other users page! AKA profile page for other people.
-More:
+* More:
 * Replying to other users feature/ chat feature. 
 * Explore page where the user gets many different, random locations if they dont know where to travel to next. 
 * Find a travel buddy explore page. Uses your location to match you to another traveler looking to explore in the place you are in.
@@ -100,6 +104,10 @@ More:
    | updatedAt     | DateTime | date when post is last updated (default field) |
 ### Networking
 #### List of network requests by screen
+   - Sign up page
+      - (Post Request) Create new account with name, username, password, and profile picture.
+   - Login in screen
+      - (Read/GET) Check account credentials
    - Home Feed Screen at Current Location
       - (Read/GET) Query all posts where post is at that GeoPoint
          ```swift
